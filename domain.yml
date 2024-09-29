@@ -1,0 +1,129 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- inform
+- thanks
+- out_of_scope
+- orderStatus
+- placeOrder
+- cancelOrder
+entities:
+- customerId
+- orderID
+- product
+- brand
+- quantity
+- paymentMethod
+slots:
+  brand:
+    type: categorical
+    influence_conversation: true
+    values:
+    - iphone
+    - samsung
+    - oneplus
+    - mi
+    - oppo
+    - nokia
+    - apple
+    - sony
+    - hitachi
+    - lg
+    - philips
+    - lenovo
+    - hp
+    - dell
+    - acer
+    - asus
+    - nikon
+    - canon
+    - fujifilm
+    - panasonic
+    mappings:
+    - type: from_entity
+      entity: brand
+
+  customerId:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: customerId
+
+  orderID:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: orderID
+
+  paymentMethod:
+    type: categorical
+    influence_conversation: true
+    values:
+    - cod
+    - onlineod
+    mappings:
+    - type: from_entity
+      entity: paymentMethod
+
+  product:
+    type: categorical
+    influence_conversation: true
+    values:
+    - phone
+    - tv
+    - laptop
+    - camera
+    mappings:
+    - type: from_entity
+      entity: product
+
+  quantity:
+    type: float
+    influence_conversation: true
+    max_value: 3.0
+    min_value: 1.0
+    mappings:
+    - type: from_entity
+      entity: quantity
+
+responses:
+  utter_greet:
+  - text: Hi. how can i help you?
+  - text: Hey there! would you like to know your order status?
+  - text: Hello! What can I help you find today?
+  utter_goodbye:
+  - text: Talk to you later!
+  - text: Have a good day.
+  - text: Until next time!
+  utter_noworries:
+  - text: My pleasure.
+  - text: You are welcome!
+  utter_ask_customer_id:
+  - text: can you please help me with your customer id
+  utter_ask_order_id:
+  - text: can you please help me with your order id
+  utter_what_else:
+  - text: can i help you with anything else?
+  - text: will that be all?
+  utter_ask_payment_method:
+  - text: how would you like to pay for this? COD or Online on delivery?
+  utter_helpless:
+  - text: i am only capable of finding order status or placing an order
+  utter_call_rep:
+  - text: would you like me to connect you with our representative
+  utter_rep_coming:
+  - text: thank you. our representative will be with you shortly
+  utter_dontsell:
+  - text: sorry we do not sell that product
+  - text: sorry we dont have that brand
+actions:
+- find_order_status
+- place_order
+- cancel_order

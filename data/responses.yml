@@ -1,0 +1,44 @@
+version: "2.0"
+
+responses:
+  utter_greet:
+    - text: "Hi. how can i help you?"
+    - text: "Hey there! would you like to know your order status?"
+    - text: "Hello! What can I help you find today?"
+    - text: "Hey there! would you like to know your order status?"
+
+
+  utter_goodbye:
+    - text: "Talk to you later!"
+    - text: "Have a good day."
+    - text: "Until next time!"
+
+  utter_noworries:
+    - text: "My pleasure."
+    - text: "You are welcome!"
+
+  utter_ask_customer_id:
+    - text: "can you please help me with your customer id"
+
+  utter_ask_order_id:
+    - text: "can you please help me with your order id"
+
+  utter_what_else:
+    - text: "can i help you with anything else?"
+    - text: "will that be all?"
+
+  utter_ask_payment_method:
+    - text: "how would you like to pay for this ? COD or Online on delivery?"
+
+  utter_helpless:
+    - text: "i am only capable of finding order status or placing an order"
+
+  utter_call_rep:
+    - text: "would you like me to connect you with our reprsentative"
+  
+  utter_rep_coming:
+    - text: "thank you. our representative will be with you shortly"
+
+  utter_dontsell:
+    - text: "sorry we do not sell that product"
+    - text: 'sorry we dont have that brand'

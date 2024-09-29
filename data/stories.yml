@@ -1,0 +1,134 @@
+version: "2.0"
+
+stories:
+
+- story: order status 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: orderStatus
+    entities: 
+    - quantity: 2
+  - slot_was_set:
+    - quantity: 2
+  - action: utter_ask_customer_id
+  - intent: inform
+    entities: 
+    - customerId: C3
+  - slot_was_set:
+    - customerId: C3
+  - action: utter_ask_order_id
+  - intent: inform
+    entities: 
+    - orderID: o1
+  - slot_was_set:
+    - orderID: o1
+  - action: find_order_status
+  - action: utter_what_else
+  - intent: goodbye
+
+- story: place order 1
+  steps:
+  - intent: placeOrder
+    entities:
+    - quantity: 2
+    - product: laptop
+    - brand: asus
+  - slot_was_set:
+    - quantity: 2
+    - product: laptop
+    - brand: asus  
+  - action: utter_ask_customer_id
+  - intent: inform
+    entities: 
+    - customerId: C5
+  - slot_was_set:
+    - customerId: C5
+  - action: utter_ask_payment_method
+  - intent: inform
+    entities: 
+    - paymentMethod: COD
+  - slot_was_set:
+    - paymentMethod: COD
+  - action: place_order
+  - action: utter_what_else
+  - intent: placeOrder
+    entities:
+    - quantity: 1
+    - product: camera
+    - brand: nikon
+  - slot_was_set:
+    - quantity: 1
+    - product: camera
+    - brand: nikon  
+  - action: place_order
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: order status 2
+  steps:
+  - intent: orderStatus
+  - action: utter_greet
+  - intent: deny
+  - action: utter_helpless
+  - intent: affirm
+  - action: utter_ask_customer_id
+  - intent: inform
+    entities: 
+    - customerId: C7
+  - slot_was_set:
+    - customerId: C7
+  - action: utter_ask_order_id
+  - intent: inform
+    entities: 
+    - orderID: o1
+  - slot_was_set:
+    - orderID: o1
+  - action: find_order_status
+  - intent: deny
+  - action: utter_helpless
+  - action: utter_call_rep
+  - intent: affirm
+  - action: utter_rep_coming
+
+- story: place order 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: placeOrder
+    entities: 
+    - product: pressure cookers
+  - slot_was_set:
+    - product: pressure cookers
+  - action: utter_dontsell
+  - intent: affirm
+  - action: place_order
+  - intent: deny
+  - action: utter_noworries
+
+- story: order status 3
+  steps:
+  - intent: orderStatus
+  - action: utter_greet
+  - intent: affirm
+  - action: utter_ask_customer_id
+  - intent: inform
+    entities: 
+    - customerId: C4
+  - slot_was_set:
+    - customerId: C4
+  - action: utter_ask_order_id
+  - intent: inform
+    entities: 
+    - orderID: o4
+  - slot_was_set:
+    - orderID: o4
+  - action: find_order_status
+  - intent: inform
+    entities: 
+    - orderID: o2
+  - slot_was_set:
+    - orderID: o2
+  - action: find_order_status
+  - intent: thanks
+  

@@ -1,0 +1,196 @@
+version: "2.0"
+
+nlu:
+- intent: affirm
+  examples: |
+    - yes
+    - yes sure
+    - absolutely
+    - for sure
+    - yes yes yes
+    - definitely
+    - yeah
+    - si
+    - ok
+    - okay
+
+- intent: deny
+  examples: |
+    - no
+    - not today
+    - no thanks
+    - no thank you
+    - uh no
+    - noope
+    - do you have something else
+    - no this does not work for me
+    - but i have not recieved yet
+    - it was not delivered to me
+    - no body attempted delivery
+
+- intent: out_of_scope
+  examples: |
+    - please help with my ice cream it's dripping
+    - no wait go back i want a dripping ice cream but a cone that catches it so you can drink the ice cream later
+    - i want a non dripping ice cream
+    - someone call the police i think the bot died
+    - show me a picture of a chicken
+    - neither
+    - I want french cuisine
+    - i am hungry
+    - restaurant
+    - can i be shown a gluten free restaurant
+    - i don't care!!!!
+    - i do not care how are you
+    - again?
+    - oh wait i gave you my work email address can i change it?
+    - hang on let me find it
+    - stop it, i do not care!!!
+    - how come?
+    - I changed my mind
+    - what?
+    - did i break you
+    - that link doesn't work!
+    - you already have that
+    - this is a really frustrating experience
+    - no stop
+    - give me food
+    - i want food
+    - Can I ask you questions first?
+    - is it a wasteland full of broken robot parts?
+    - can we keep chatting?
+    - talk to me
+    - who is your favourite robot?
+    - can you help me to build a bot
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - Bye!
+    - Goodbye
+    - See you later
+    - Bye bot
+    - Goodbye friend
+    - bye
+    - bye for now
+    - catch you later
+    - gotta go
+    - See you
+    - goodnight
+    - have a nice day
+    - i'm off
+    - see you later alligator
+    - we'll speak soon
+
+- intent: greet
+  examples: |
+    - Hi
+    - Hey
+    - Hi bot
+    - Hey bot
+    - Hello
+    - good morning
+    - hi again
+    - hi folks
+    - hi Mister
+    - hi pal!
+    - hi there
+    - greetings
+    - hello everybody
+    - hello is anybody there
+    - hello robot
+    - hi
+
+- intent: orderStatus
+  examples: |
+    - where is my product?
+    - i have been waiting for the delivery forever 
+    - my order has not been delivered
+    - when will my delivery arrive?
+    - have you lost my order?
+    - my order has not arrived 
+    - i was expecting to get my [TV](product) delivered today
+    - my [laptop](product) should have been here by now
+    - can you please dispatch my [TV](product) already
+    - i need my [laptop](product) for my work
+    - i dont have a [phone](product) right now. i deseprately need the one that i ordered.
+    - when will you deliver my [phone](product)
+
+- intent: placeOrder
+  examples: |
+    - i want to buy a [TV](product)
+    - i would like to place an order for [2](quantity) [acer](brand) [laptops](product)
+    - what brand of [phones](product) are available on your website?
+    - do you happen to sell [apple](brand) [TV](product)?
+    - which [laptop](product) would you recommend for a student ?
+    - i was looking to buy an [iphone](brand)
+    - can i place an order for [2](quantity) [mi](brand) [phones](product)?
+    - i will pay by [card](paymentMethod)
+    - [cash](paymentMethod) works for me 
+    - i will use [digital wallet](paymentMethod)
+    - do you accept [credit cards](paymentMethod)?
+    - i will go for [online](paymentMethod) payment
+
+- intent: inform
+  examples: |
+    - [C1](customerId)
+    - [C2](customerId)
+    - [C3](customerId)
+    - [o2](orderID)
+    - [o4](orderID)
+    - [cash](paymentMethod)
+    - [TV](product)
+    - [apple](brand)
+    - [phone](product)
+    - [laptops](product)
+    - [sony](brand)
+
+- intent: cancelOrder
+  examples: |
+    - i dont want my order anymore 
+    - can you please cancel my order
+
+- regex: customerId
+  examples: |
+    - C[1-9]
+
+- regex: orderID
+  examples: |
+    - o[1-9]
+
+- synonym: phone
+  examples: |
+    - telephone
+    - mobile
+    - mobile phone
+
+- synonym: TV
+  examples: |
+    - Television
+    - flat screen TV
+    - Tele Vision
+
+- synonym: laptop
+  examples: |
+    - computer
+    - pc
+    - personal computer
+    - portable computer
+    - workstation
+    - desktop
+    - laptops
+
+- synonym: COD
+  examples: |
+    - cash
+    - cash on delivery
+    - COD
+
+- synonym: onlineod
+  examples: |
+    - digital wallet
+    - online
+    - card
+    - credit card
+    - online on delivery
+
